@@ -33,6 +33,12 @@ const IMG = {
 };
 
 const IG_LINK = "https://www.instagram.com/beautysipzbartending/";
+const BOOK_FORM =
+  "https://docs.google.com/forms/d/e/1FAIpQLScRgg02h8WejIpR1HijA0_f4sP5EXJ7OY0jHxzMucNJny83oQ/viewform";
+
+// Sends form submissions to beautysipz@gmail.com without a backend.
+// Note: FormSubmit may send a one-time confirmation email to activate.
+const FORM_ACTION = "https://formsubmit.co/beautysipz@gmail.com";
 
 function GlowBackground() {
   return (
@@ -145,8 +151,12 @@ export default function App() {
               <a className="hover:text-white" href="#contact">
                 Contact
               </a>
+
+              {/* Book us now goes directly to your Google Form */}
               <a
-                href="#contact"
+                href={BOOK_FORM}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-violet-600 px-4 py-2 text-xs font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
               >
                 Book us
@@ -182,8 +192,11 @@ export default function App() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
+              {/* Optional: this also goes to Google Form */}
               <a
-                href="#contact"
+                href={BOOK_FORM}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
               >
                 Book your event
@@ -229,7 +242,7 @@ export default function App() {
               <img
                 src={IMG.large}
                 alt="Beauty Sipz main"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-[60%_center]"
               />
             </div>
             <p className="mt-4 text-sm text-white/70">
@@ -247,33 +260,37 @@ export default function App() {
           <Card className="p-6">
             <h3 className="text-xl font-semibold">Our Bio</h3>
             <p className="mt-3 text-white/80">
-              Beauty Sipz Mobile Bartending Services LLC is a Black-owned, all-women
-              mobile bartending company founded in 2023 with one mission: to bring a
-              luxury bar experience with heart directly to you.
+              Beauty Sipz Mobile Bartending Services LLC is a Black-owned,
+              all-women mobile bartending company founded in 2023 with one
+              mission: to bring a luxury bar experience with heart directly to
+              you.
             </p>
             <p className="mt-3 text-white/80">
-              We specialize in private and corporate bartending services. From weddings,
-              birthdays, bachelorette parties, girls nights, family gatherings, party buses,
-              corporate events, and pop-ups, Beauty Sipz delivers a professional, classy,
-              and personalized bar experience every time.
+              We specialize in private and corporate bartending services. From
+              weddings, birthdays, bachelorette parties, girls nights, family
+              gatherings, party buses, corporate events, and pop-ups, Beauty
+              Sipz delivers a professional, classy, and personalized bar
+              experience every time.
             </p>
             <p className="mt-3 text-white/80">
-              Inclusivity matters. We cater to non-alcoholic drinkers with specialty mocktails
-              and fresh fruit-infused waters so every guest feels included.
+              Inclusivity matters. We cater to non-alcoholic drinkers with
+              specialty mocktails and fresh fruit-infused waters so every guest
+              feels included.
             </p>
           </Card>
 
           <Card className="p-6">
             <h3 className="text-xl font-semibold">Our Purpose</h3>
             <p className="mt-3 text-white/80">
-              Our purpose is to create unforgettable experiences through intentional service,
-              beautiful presentation, and genuine connection. Bartending is about atmosphere and
-              making people feel valued.
+              Our purpose is to create unforgettable experiences through
+              intentional service, beautiful presentation, and genuine
+              connection. Bartending is about atmosphere and making people feel
+              valued.
             </p>
             <p className="mt-3 text-white/80">
-              Our long-term vision includes developing signature beverage lines, expanding product
-              offerings, and growing as women entrepreneurs while staying rooted in community,
-              creativity, and love.
+              Our long-term vision includes developing signature beverage lines,
+              expanding product offerings, and growing as women entrepreneurs
+              while staying rooted in community, creativity, and love.
             </p>
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-5">
@@ -307,10 +324,12 @@ export default function App() {
               </div>
               <h4 className="mt-4 font-semibold">Kendra | Co-Founder</h4>
               <p className="mt-2 text-sm text-white/80">
-                Kendra is a natural entrepreneur with a passion for people, experiences, and
-                building meaningful brands from vision alone. With over 25 years in service-based
-                industries, she brings professionalism, structure, and heart to Beauty Sipz.
-                Kendra leads business operations, marketing strategy, and brand direction.
+                Kendra is a natural entrepreneur with a passion for people,
+                experiences, and building meaningful brands from vision alone.
+                With over 25 years in service-based industries, she brings
+                professionalism, structure, and heart to Beauty Sipz. Kendra
+                leads business operations, marketing strategy, and brand
+                direction.
               </p>
             </div>
 
@@ -326,10 +345,11 @@ export default function App() {
                 Angela | Co-Founder and Mixologist
               </h4>
               <p className="mt-2 text-sm text-white/80">
-                Angela is a creative visionary and the lead mixologist behind Beauty Sipz. With
-                over 25 years in hospitality specializing in luxury brands and refined experiences,
-                she designs and crafts signature cocktails, mocktails, infused waters, and
-                products, with beautiful visual presentation.
+                Angela is a creative visionary and the lead mixologist behind
+                Beauty Sipz. With over 25 years in hospitality specializing in
+                luxury brands and refined experiences, she designs and crafts
+                signature cocktails, mocktails, infused waters, and products,
+                with beautiful visual presentation.
               </p>
             </div>
           </div>
@@ -389,7 +409,8 @@ export default function App() {
         <div className="mt-10">
           <h3 className="text-xl font-semibold">Featured events and promos</h3>
           <p className="mt-2 max-w-2xl text-sm text-white/70">
-            Examples of how we show up for brand activations, pop-ups, and themed nights.
+            Examples of how we show up for brand activations, pop-ups, and themed
+            nights.
           </p>
 
           <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -423,7 +444,8 @@ export default function App() {
         <div className="flex flex-col items-center text-center">
           <h2 className="text-3xl font-bold">Gallery</h2>
           <p className="mt-3 max-w-2xl text-white/80">
-            A peek into our bar setups, cocktails, mocktails, gummies, and curated gift baskets.
+            A peek into our bar setups, cocktails, mocktails, gummies, and
+            curated gift baskets.
           </p>
         </div>
 
@@ -467,7 +489,8 @@ export default function App() {
       <SectionShell id="contact" className="mt-20 pb-20">
         <h2 className="text-3xl font-bold">Contact</h2>
         <p className="mt-3 max-w-2xl text-white/80">
-          Tell us about your event and we will follow up with availability and next steps.
+          Tell us about your event and we will follow up with availability and
+          next steps.
         </p>
 
         <div className="mt-6 grid gap-8 lg:grid-cols-2">
@@ -492,44 +515,77 @@ export default function App() {
                   @beautysipzbartending
                 </a>
               </p>
+
+              <div className="pt-3">
+                <a
+                  href={BOOK_FORM}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex rounded-full border border-white/20 bg-black/20 px-5 py-3 text-sm font-semibold hover:bg-white/10"
+                >
+                  Open booking form
+                </a>
+              </div>
             </div>
           </Card>
 
           <Card className="p-6">
             <h3 className="text-xl font-semibold">Book request</h3>
-            <form className="mt-4 grid gap-3">
+
+            {/* This form submits to beautysipz@gmail.com via FormSubmit */}
+            <form className="mt-4 grid gap-3" action={FORM_ACTION} method="POST">
+              {/* Optional FormSubmit settings */}
+              <input type="hidden" name="_subject" value="New Beauty Sipz booking request" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://beautysipz.com/#contact" />
+
               <input
+                name="name"
+                required
                 className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
                 placeholder="Name"
               />
               <input
+                name="email"
+                type="email"
+                required
                 className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
                 placeholder="Email"
               />
               <input
+                name="phone"
                 className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
                 placeholder="Phone"
               />
               <input
+                name="event_date"
                 className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
                 placeholder="Event date"
               />
               <input
+                name="event_type"
                 className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
                 placeholder="Event type (wedding, birthday, corporate)"
               />
               <textarea
+                name="details"
                 className="min-h-[120px] rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
                 placeholder="Tell us your vision, guest count, and location"
               />
               <button
-                type="button"
+                type="submit"
                 className="rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
               >
                 Submit request
               </button>
+
               <p className="text-xs text-white/60">
-                Form submission wiring comes next.
+                Prefer the Google Form?{" "}
+                <a className="underline" href={BOOK_FORM} target="_blank" rel="noreferrer">
+                  Click here
+                </a>
+                .
               </p>
             </form>
           </Card>
