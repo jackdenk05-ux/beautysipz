@@ -242,7 +242,7 @@ export default function App() {
               <img
                 src={IMG.large}
                 alt="Beauty Sipz main"
-                className="h-full w-full object-cover object-left"
+                className="h-full w-full object-cover object-right"
               />
             </div>
             <p className="mt-4 text-sm text-white/70">
