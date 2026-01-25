@@ -418,7 +418,7 @@ export default function App() {
               <img
                 src={IMG.cigarWeek}
                 alt="Chicago Cigar Week"
-                className="h-64 w-full object-cover"
+                className="h-64 w-full object-bottom"
               />
             </Card>
             <Card className="overflow-hidden">
