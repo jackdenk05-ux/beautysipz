@@ -32,6 +32,14 @@ const IMG = {
   fathersDay: "/images/fathers-day-special.png",
 };
 
+// All videos live in: /public/videos
+// Example path in code: "/videos/your-file-name.mp4"
+const VID = {
+  promo1: "/videos/promo-1.mp4",
+  promo2: "/videos/promo-2.mp4",
+  promo3: "/videos/promo-3.mov",
+};
+
 const IG_LINK = "https://www.instagram.com/beautysipzbartending/";
 const BOOK_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLScRgg02h8WejIpR1HijA0_f4sP5EXJ7OY0jHxzMucNJny83oQ/viewform";
@@ -199,161 +207,108 @@ export default function App() {
                 rel="noreferrer"
                 className="rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
               >
-                Book your event
+                Book us
               </a>
+
               <a
                 href="tel:3128987836"
-                className="rounded-full border border-white/20 bg-black/20 px-5 py-3 text-sm font-semibold hover:bg-white/10"
+                className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
               >
                 Call 312-898-7836
               </a>
+
               <a
                 href="#gallery"
-                className="rounded-full border border-white/20 bg-black/20 px-5 py-3 text-sm font-semibold hover:bg-white/10"
+                className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white/90 hover:bg-white/10"
               >
                 View gallery
               </a>
             </div>
 
-            <Card className="mt-8 p-5">
-              <div className="grid gap-3 md:grid-cols-2">
-                <div className="text-sm text-white/85">
-                  Private and corporate bartending
-                </div>
-                <div className="text-sm text-white/85">
-                  Cocktails, mocktails, infused waters
-                </div>
-                <div className="text-sm text-white/85">
-                  Styled setups with decor and florals
-                </div>
-                <div className="text-sm text-white/85">
-                  Alcohol-infused gummies (no THC)
-                </div>
-                <div className="text-sm text-white/85">Curated gift baskets</div>
-                <div className="text-sm text-white/85">
-                  Custom menus for your theme
-                </div>
-              </div>
-            </Card>
+            <div className="mt-7 flex items-center gap-4 text-sm text-white/70">
+              <a
+                href={IG_LINK}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-white"
+              >
+                Instagram
+              </a>
+              <span className="h-1 w-1 rounded-full bg-white/40" />
+              <a href="#contact" className="hover:text-white">
+                Get a quote
+              </a>
+            </div>
           </div>
 
-          <Card className="p-6">
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-black/30">
-              <img
-                src={IMG.large}
-                alt="Beauty Sipz main"
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
-            <p className="mt-4 text-sm text-white/70">
-              Luxury bar experience with heart, delivered to you.
-            </p>
+          <Card className="relative overflow-hidden p-2">
+            <div className="absolute inset-0 bg-gradient-to-tr from-violet-600/10 via-fuchsia-500/5 to-transparent" />
+            <img
+              src={IMG.large}
+              alt="Luxury mobile bar setup"
+              className="relative h-[420px] w-full rounded-2xl object-cover"
+            />
           </Card>
         </div>
       </SectionShell>
 
       {/* ABOUT */}
       <SectionShell id="about" className="mt-20">
-        <h2 className="text-3xl font-bold">About</h2>
-
-        <div className="mt-6 grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <Card className="p-6">
-            <h3 className="text-xl font-semibold">Our Bio</h3>
-            <p className="mt-3 text-white/80">
-              Beauty Sipz Mobile Bartending Services LLC is a Black-owned,
-              all-women mobile bartending company founded in 2023 with one
-              mission: to bring a luxury bar experience with heart directly to
-              you.
+            <h2 className="text-3xl font-bold">About</h2>
+            <p className="mt-4 text-white/80">
+              We specialize in stylish, professional mobile bartending for
+              private events, brand activations, pop-ups, and celebrations.
+              Whether you want an elegant full bar or a fun themed setup, we
+              make it easy and unforgettable.
             </p>
-            <p className="mt-3 text-white/80">
-              We specialize in private and corporate bartending services. From
-              weddings, birthdays, bachelorette parties, girls nights, family
-              gatherings, party buses, corporate events, and pop-ups, Beauty
-              Sipz delivers a professional, classy, and personalized bar
-              experience every time.
-            </p>
-            <p className="mt-3 text-white/80">
-              Inclusivity matters. We cater to non-alcoholic drinkers with
-              specialty mocktails and fresh fruit-infused waters so every guest
-              feels included.
-            </p>
+
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-sm font-semibold">Luxury presentation</div>
+                <div className="mt-1 text-sm text-white/70">
+                  Clean setup, polished details, and a premium feel.
+                </div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-sm font-semibold">With heart</div>
+                <div className="mt-1 text-sm text-white/70">
+                  Friendly service that keeps guests comfortable and happy.
+                </div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-sm font-semibold">Custom menus</div>
+                <div className="mt-1 text-sm text-white/70">
+                  Signature cocktails, mocktails, and themed specials.
+                </div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-sm font-semibold">Easy booking</div>
+                <div className="mt-1 text-sm text-white/70">
+                  Quick form and fast response so you can lock in your date.
+                </div>
+              </div>
+            </div>
           </Card>
 
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold">Our Purpose</h3>
-            <p className="mt-3 text-white/80">
-              Our purpose is to create unforgettable experiences through
-              intentional service, beautiful presentation, and genuine
-              connection. Bartending is about atmosphere and making people feel
-              valued.
-            </p>
-            <p className="mt-3 text-white/80">
-              Our long-term vision includes developing signature beverage lines,
-              expanding product offerings, and growing as women entrepreneurs
-              while staying rooted in community, creativity, and love.
-            </p>
-
-            <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 p-5">
-              <h4 className="font-semibold">What you can expect</h4>
-              <ul className="mt-3 grid gap-2 text-sm text-white/80 md:grid-cols-2">
-                <li>✔ Professional and personable bartenders</li>
-                <li>✔ Custom bar setups tailored to your event</li>
-                <li>✔ Signature cocktails and mocktails</li>
-                <li>✔ Fresh fruit-infused waters</li>
-                <li>✔ Alcohol-infused gummies (no THC)</li>
-                <li>✔ Curated gift baskets for any occasion</li>
-                <li>✔ Stylish decor, florals, intentional service</li>
-                <li>✔ Inclusive elevated experience on-site or on-the-go</li>
-              </ul>
-            </div>
-          </Card>
-        </div>
-
-        {/* FOUNDERS */}
-        <Card className="mt-10 p-6">
-          <h3 className="text-xl font-semibold">Meet the Founders</h3>
-
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-              <div className="aspect-square overflow-hidden rounded-xl bg-black/30">
-                <img
-                  src={IMG.kendra}
-                  alt="Kendra"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <h4 className="mt-4 font-semibold">Kendra | Co-Founder</h4>
-              <p className="mt-2 text-sm text-white/80">
-                Kendra is a natural entrepreneur with a passion for people,
-                experiences, and building meaningful brands from vision alone.
-                With over 25 years in service-based industries, she brings
-                professionalism, structure, and heart to Beauty Sipz. Kendra
-                leads business operations, marketing strategy, and brand
-                direction.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-              <div className="aspect-square overflow-hidden rounded-xl bg-black/30">
-                <img
-                  src={IMG.angela}
-                  alt="Angela"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <h4 className="mt-4 font-semibold">
-                Angela | Co-Founder and Mixologist
-              </h4>
-              <p className="mt-2 text-sm text-white/80">
-                Angela is a creative visionary and the lead mixologist behind
-                Beauty Sipz. With over 25 years in hospitality specializing in
-                luxury brands and refined experiences, she designs and crafts
-                signature cocktails, mocktails, infused waters, and products,
-                with beautiful visual presentation.
-              </p>
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Card className="overflow-hidden">
+              <img
+                src={IMG.duo}
+                alt="Angela and Kendra"
+                className="h-64 w-full object-cover"
+              />
+            </Card>
+            <Card className="overflow-hidden">
+              <img
+                src={IMG.heroSetup}
+                alt="Bar setup"
+                className="h-64 w-full object-cover"
+              />
+            </Card>
           </div>
-        </Card>
+        </div>
       </SectionShell>
 
       {/* SERVICES */}
@@ -436,6 +391,52 @@ export default function App() {
               />
             </Card>
           </div>
+
+          {/* Featured videos */}
+          <div className="mt-6">
+            <h4 className="text-lg font-semibold">Featured videos</h4>
+            <p className="mt-2 max-w-2xl text-sm text-white/70">
+              Quick clips from recent setups and events.
+            </p>
+
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <Card className="overflow-hidden">
+                <video
+                  className="h-64 w-full object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={VID.promo1} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Card>
+
+              <Card className="overflow-hidden">
+                <video
+                  className="h-64 w-full object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={VID.promo2} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </Card>
+
+              <Card className="overflow-hidden">
+                <video
+                  className="h-64 w-full object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={VID.promo3} type="video/quicktime" />
+                  Your browser does not support the video tag.
+                </video>
+              </Card>
+            </div>
+          </div>
         </div>
       </SectionShell>
 
@@ -487,114 +488,125 @@ export default function App() {
 
       {/* CONTACT */}
       <SectionShell id="contact" className="mt-20 pb-20">
-        <h2 className="text-3xl font-bold">Contact</h2>
-        <p className="mt-3 max-w-2xl text-white/80">
-          Tell us about your event and we will follow up with availability and
-          next steps.
-        </p>
+        <div className="grid gap-8 lg:grid-cols-2">
+          <Card className="p-6">
+            <h2 className="text-3xl font-bold">Contact</h2>
+            <p className="mt-3 text-white/80">
+              Ready to book or have a question? Send us a message and we will
+              get back to you quickly.
+            </p>
 
-        <div className="mt-6 grid gap-8 lg:grid-cols-2">
+            <form className="mt-6 grid gap-4" action={FORM_ACTION} method="POST">
+              {/* FormSubmit options */}
+              <input type="hidden" name="_subject" value="Beauty Sipz inquiry" />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <input
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-violet-400/60"
+                />
+                <input
+                  name="email"
+                  required
+                  type="email"
+                  placeholder="Your email"
+                  className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-violet-400/60"
+                />
+              </div>
+
+              <input
+                name="phone"
+                placeholder="Phone (optional)"
+                className="w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-violet-400/60"
+              />
+
+              <textarea
+                name="message"
+                required
+                rows={5}
+                placeholder="Tell us about your event (date, location, guest count, vibe)"
+                className="w-full resize-none rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-violet-400/60"
+              />
+
+              <button
+                type="submit"
+                className="rounded-full bg-violet-600 px-6 py-3 text-sm font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
+              >
+                Send message
+              </button>
+
+              <p className="text-xs text-white/50">
+                Or book instantly using the Book us button at the top.
+              </p>
+            </form>
+          </Card>
+
           <Card className="p-6">
             <h3 className="text-xl font-semibold">Quick info</h3>
-            <div className="mt-4 space-y-2 text-sm text-white/80">
-              <p>Service area: Chicago and nearby suburbs</p>
-              <p>
-                Phone{" "}
-                <a className="underline" href="tel:3128987836">
+            <div className="mt-4 grid gap-3 text-sm text-white/80">
+              <div>
+                <div className="text-white/60">Phone</div>
+                <a className="hover:text-white" href="tel:3128987836">
                   312-898-7836
                 </a>
-              </p>
-              <p>
-                Instagram{" "}
+              </div>
+              <div>
+                <div className="text-white/60">Instagram</div>
                 <a
-                  className="underline"
+                  className="hover:text-white"
                   href={IG_LINK}
                   target="_blank"
                   rel="noreferrer"
                 >
                   @beautysipzbartending
                 </a>
-              </p>
-
-              <div className="pt-3">
+              </div>
+              <div>
+                <div className="text-white/60">Booking form</div>
                 <a
+                  className="hover:text-white"
                   href={BOOK_FORM}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex rounded-full border border-white/20 bg-black/20 px-5 py-3 text-sm font-semibold hover:bg-white/10"
                 >
                   Open booking form
                 </a>
               </div>
             </div>
-          </Card>
 
-          <Card className="p-6">
-            <h3 className="text-xl font-semibold">Book request</h3>
-
-            {/* This form submits to beautysipz@gmail.com via FormSubmit */}
-            <form className="mt-4 grid gap-3" action={FORM_ACTION} method="POST">
-              {/* Optional FormSubmit settings */}
-              <input type="hidden" name="_subject" value="New Beauty Sipz booking request" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://beautysipz.com/#contact" />
-
-              <input
-                name="name"
-                required
-                className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
-                placeholder="Name"
+            <div className="mt-6 overflow-hidden rounded-2xl border border-white/10">
+              <img
+                src={IMG.heroSetup}
+                alt="Beauty Sipz setup"
+                className="h-64 w-full object-cover"
               />
-              <input
-                name="email"
-                type="email"
-                required
-                className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
-                placeholder="Email"
-              />
-              <input
-                name="phone"
-                className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
-                placeholder="Phone"
-              />
-              <input
-                name="event_date"
-                className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
-                placeholder="Event date"
-              />
-              <input
-                name="event_type"
-                className="rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
-                placeholder="Event type (wedding, birthday, corporate)"
-              />
-              <textarea
-                name="details"
-                className="min-h-[120px] rounded-xl bg-black/30 p-3 text-sm outline-none ring-1 ring-white/10 placeholder:text-white/40"
-                placeholder="Tell us your vision, guest count, and location"
-              />
-              <button
-                type="submit"
-                className="rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
-              >
-                Submit request
-              </button>
-
-              <p className="text-xs text-white/60">
-                Prefer the Google Form?{" "}
-                <a className="underline" href={BOOK_FORM} target="_blank" rel="noreferrer">
-                  Click here
-                </a>
-                .
-              </p>
-            </form>
+            </div>
           </Card>
         </div>
       </SectionShell>
 
-      <footer className="border-t border-white/10 bg-black/30 backdrop-blur">
-        <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-white/60">
-          © {new Date().getFullYear()} Beauty Sipz Mobile Bartending Services LLC
+      {/* FOOTER */}
+      <footer className="border-t border-white/10 bg-black/30 py-10">
+        <div className="mx-auto max-w-6xl px-6 text-sm text-white/60">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <div>© {new Date().getFullYear()} Beauty Sipz</div>
+            <div className="flex gap-4">
+              <a className="hover:text-white" href="#home">
+                Back to top
+              </a>
+              <a
+                className="hover:text-white"
+                href={IG_LINK}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
