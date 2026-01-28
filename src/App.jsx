@@ -32,16 +32,15 @@ const IMG = {
   fathersDay: "/images/fathers-day-special.png",
 };
 
-// Videos live in: /public/videos
-const VID = {
-  promo1: "/videos/promo-1.mp4",
-  promo2: "/videos/promo-2.mp4",
-  promo3: "/videos/promo-3.mp4",
-};
-
 const IG_LINK = "https://www.instagram.com/beautysipzbartending/";
+
+// Original booking form (keep this for event booking)
 const BOOK_FORM =
   "https://docs.google.com/forms/d/e/1FAIpQLScRgg02h8WejIpR1HijA0_f4sP5EXJ7OY0jHxzMucNJny83oQ/viewform";
+
+// New order form (this is what the top button will use)
+const ORDER_FORM =
+  "https://docs.google.com/forms/d/1bfK6CJNpO2JHLZPC3pxNiSOCM2t4VoqHzbJo8Si1Jj8/preview";
 
 // Sends form submissions to beautysipz@gmail.com without a backend.
 // Note: FormSubmit may send a one-time confirmation email to activate.
@@ -159,14 +158,14 @@ export default function App() {
                 Contact
               </a>
 
-              {/* Book us now goes directly to your Google Form */}
+              {/* Top button is now Order now */}
               <a
-                href={BOOK_FORM}
+                href={ORDER_FORM}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full bg-violet-600 px-4 py-2 text-xs font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
               >
-                Book us
+                Order now
               </a>
             </nav>
 
@@ -199,21 +198,23 @@ export default function App() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              {/* Optional: this also goes to Google Form */}
+              {/* Primary CTA is now Order now */}
               <a
-                href={BOOK_FORM}
+                href={ORDER_FORM}
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
               >
-                Book your event
+                Order now
               </a>
+
               <a
                 href="tel:3128987836"
                 className="rounded-full border border-white/20 bg-black/20 px-5 py-3 text-sm font-semibold hover:bg-white/10"
               >
                 Call 312-898-7836
               </a>
+
               <a
                 href="#gallery"
                 className="rounded-full border border-white/20 bg-black/20 px-5 py-3 text-sm font-semibold hover:bg-white/10"
@@ -443,53 +444,9 @@ export default function App() {
               />
             </Card>
           </div>
-
-          {/* Featured videos */}
-          <div className="mt-6">
-            <h4 className="text-lg font-semibold">Featured videos</h4>
-            <p className="mt-2 max-w-2xl text-sm text-white/70">
-              Quick clips from recent setups and events.
-            </p>
-
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <Card className="overflow-hidden">
-                <video
-                  className="block h-64 w-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src={VID.promo1} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Card>
-
-              <Card className="overflow-hidden">
-                <video
-                  className="block h-64 w-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src={VID.promo2} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Card>
-
-              <Card className="overflow-hidden">
-                <video
-                  className="block h-64 w-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                >
-                  <source src={VID.promo3} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </Card>
-            </div>
-          </div>
         </div>
+
+        {/* Videos removed for now */}
       </SectionShell>
 
       {/* GALLERY */}
@@ -569,7 +526,16 @@ export default function App() {
                 </a>
               </p>
 
-              <div className="pt-3">
+              <div className="pt-3 flex flex-wrap gap-3">
+                <a
+                  href={ORDER_FORM}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex rounded-full bg-violet-600 px-5 py-3 text-sm font-semibold shadow-[0_10px_30px_rgba(124,58,237,0.35)] hover:bg-violet-500"
+                >
+                  Order now
+                </a>
+
                 <a
                   href={BOOK_FORM}
                   target="_blank"
