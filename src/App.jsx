@@ -526,6 +526,17 @@ export default function App() {
                 </a>
               </p>
 
+              <p>
+               Email{" "}
+               <a 
+                 className="underline" 
+                 href="mailto:beautysipz2023@gmail.com"
+               >
+                 beautysipz2023@gmail.com
+                </a>
+               </p>
+
+
               <div className="pt-3 flex flex-wrap gap-3">
                 <a
                   href={ORDER_FORM}
