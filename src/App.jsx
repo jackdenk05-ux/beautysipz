@@ -464,32 +464,31 @@ export default function App() {
             <img
               src={IMG.fruity}
               alt="Fruity drinks"
-              className="h-64 w-full rounded-2xl object-cover"
+              className="h-auto w-full rounded-2xl object-contain bg-black/20"
             />
             <img
               src={IMG.spicy}
               alt="Spicy margaritas"
-              className="h-64 w-full rounded-2xl object-cover"
+              className="h-auto w-full rounded-2xl object-contain bg-black/20"
             />
             <img
               src={IMG.espresso}
               alt="Espresso martini"
-              className="h-64 w-full rounded-2xl object-cover object-[50%_20%]"
-            />
+              className="h-auto w-full rounded-2xl object-contain bg-black/20"            />
             <img
               src={IMG.flowers}
               alt="Gift basket"
-              className="h-64 w-full rounded-2xl object-cover"
+              className="h-auto w-full rounded-2xl object-contain bg-black/20"
             />
             <img
               src={IMG.gummies}
               alt="Gummies"
-              className="h-64 w-full rounded-2xl object-cover"
+              className="h-auto w-full rounded-2xl object-contain bg-black/20"
             />
             <img
               src={IMG.butterfly}
               alt="Butterfly gummies"
-              className="h-64 w-full rounded-2xl object-cover"
+              className="h-auto w-full rounded-2xl object-contain bg-black/20"
             />
           </div>
         </div>
