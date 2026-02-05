@@ -474,7 +474,7 @@ export default function App() {
             <img
               src={IMG.espresso}
               alt="Espresso martini"
-              className="h-64 w-full rounded-2xl object-cover"
+              className="h-64 w-full rounded-2xl object-cover object-[50%_20%]"
             />
             <img
               src={IMG.flowers}
